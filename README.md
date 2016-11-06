@@ -1,2 +1,2 @@
-# python_iseng
+# python-iseng
 Kumpulan kodingan iseng menggunakan Python
