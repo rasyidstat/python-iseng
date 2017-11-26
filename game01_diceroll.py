@@ -11,7 +11,7 @@ def diceroll_play(n, len_road, n_cp, dice, cp):
 	while (pos != [len_road] * n) & (len(winner) != n-1):
 		print("turn-" + str(n_turn))
 		for i in range(len(pos)):
-			if pos[i] < 100:
+			if pos[i] < len_road:
 				# roll dice
 				print("player " + str(i+1) + " turn")
 				roll = random.choice(dice)
@@ -19,14 +19,14 @@ def diceroll_play(n, len_road, n_cp, dice, cp):
 
 				# move
 				if (pos[i] + roll) > len_road:
-					print("Not move, almost there...")
-				elif pos[i] == 100:
+					print("not move, almost there...")
+				elif pos[i] == len_road:
 					continue
 				else:
 					pos[i] = pos[i] + roll
 
 				# win or not
-				if pos[i] == 100:
+				if pos[i] == len_road:
 					print("player " + str(i+1) + " win the game!")
 					winner += ["player " + str(i+1)]
 					if len(winner) == n-1:
